@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() 
+{
+    int i, j, n;
+    
+    printf("Enter the number of Elements: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Input array elements
+    for(i = 0; i < n; i++)
+	{
+		printf("Enter Array Elements: ");
+        scanf("%d", &arr[i]);
+    }
+
+    int count = 0;
+
+    // Check for distinct elements
+    for(i = 0; i < n; i++) 
+	{
+        int isDistinct = 1;
+
+        for(j = 0; j < i; j++) 
+		{
+            if(arr[i] == arr[j]) 
+			{
+                isDistinct = 0;
+                break;
+            }
+        }
+
+        if(isDistinct) 
+		{
+            count++;
+        }
+    }
+
+    printf("The Number of Unique Elements in the array are: %d", count);
+
+    return 0;
+}
