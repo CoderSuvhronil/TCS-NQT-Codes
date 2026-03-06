@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int i, j, n;
+
+    cout << "Enter the number of Elements: ";
+    cin >> n;
+
+    int arr[n];
+
+    // Input array elements
+    for(i = 0; i < n; i++)
+    {
+        cout << "Enter Array Elements: ";
+        cin >> arr[i];
+    }
+
+    int count = 0;
+
+    // Check for distinct elements
+    for(i = 0; i < n; i++) 
+    {
+        int isDistinct = 1;
+
+        for(j = 0; j < i; j++) 
+        {
+            if(arr[i] == arr[j]) 
+            {
+                isDistinct = 0;
+                break;
+            }
+        }
+
+        if(isDistinct) 
+        {
+            count++;
+        }
+    }
+
+    cout << "The Number of Unique Elements in the array are: " << count;
+
+    return 0;
+}
